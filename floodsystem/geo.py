@@ -15,7 +15,4 @@ def stations_by_distance(stations, p):
         liststation=[station.name, haversine(station.coord, p)]
         listdistance.append(liststation)
     return sorted_by_key(listdistance,1)     
-a=2
-b=3
-c=a+c
-print(c)
+
