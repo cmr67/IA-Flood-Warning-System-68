@@ -11,12 +11,12 @@ from haversine import haversine, Unit
 
 # Task 1B
 def stations_by_distance(stations, p):
-    listdistance = []
+    listdistance = [] #empty list
     for station in stations:
-        dist = haversine(station.coord, p)
+        dist = haversine(station.coord, p) #Distance between coordinates and the stations
         liststation=[station, dist]
         listdistance.append(liststation)
-    return sorted_by_key(listdistance,1)     
+    return sorted_by_key(listdistance,1) #Sorting 
 
 # Task 1C
 def stations_within_radius(stations, centre, r):
