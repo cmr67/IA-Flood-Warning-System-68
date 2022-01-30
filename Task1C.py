@@ -3,5 +3,3 @@ from floodsystem.stationdata import build_station_list
 stations = stations_within_radius()
 centre = 52.2053, 0.1218
 r = 10
-for abs(r) < 10:
-    print(stations)
