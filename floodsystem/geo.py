@@ -23,6 +23,6 @@ def stations_within_radius(stations, centre, r):
     listradius = []
     for station in stations:
         distance_from_centre = haversine(station.coord, centre, unit=Unit.KILOMETERS) # Distance of the centre from the stations in km
-        if distance_from_centre <= r: # Ifd the distance is less than the specified radius, insclude it in the list
+        if distance_from_centre <= r: # If the distance is less than or equal to the specified radius, insclude it in the list
             listradius.append(station)
     return listradius
