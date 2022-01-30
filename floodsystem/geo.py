@@ -21,6 +21,9 @@ def stations_by_distance(stations, p):
 def stations_within_radius(stations, centre, r):
     listradius = []
     for station in stations:
-        radiusstation = [station.name, centre, haversine(station.coord, centre, unit=Unit.KILOMETERS)]
-        listradius.append(radiusstation)
-    return sorted_by_key(listradius, 2)
+        distance_from_centre = haversine(station.coord, centre, unit=Unit.KILOMETERS)
+        if distance_from_centre < r:
+            listradius.append(station)
+        #radiusstation = [station.name, centre, haversine(station.coord, centre, unit=Unit.KILOMETERS)]
+            
+    return listradius
