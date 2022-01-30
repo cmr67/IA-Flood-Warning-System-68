@@ -20,8 +20,11 @@ def run():
                 'Bourton Dickler', 'Surfleet Sluice', 'Gaw Bridge'
         ]:
             print(station)
+            print("")
 
 
 if __name__ == "__main__":
+    print("")
     print("*** Task 1A: CUED Part IA Flood Warning System ***")
+    print("")
     run()
