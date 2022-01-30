@@ -8,11 +8,12 @@ def run():
     #shell for 1C code
     stations = build_station_list
     stations_in_radius = stations_within_radius(stations, centre, r)
+
     station_list = []
     for station in stations_in_radius:
         station_list.append(station.name)
 
-    print(stations_in_radius)
+    print(sorted(stations_in_radius))
 
 if __name__ == "__main__":
     run()
