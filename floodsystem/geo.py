@@ -26,7 +26,7 @@ def stations_within_radius(stations, centre, r):
         if distance_from_centre <= r: # If the distance is less than or equal to the specified radius, insclude it in the list
             listradius.append(station)
     return listradius
-#Task 1E
+#Task 1D
 def rivers_with_station(stations):
     river=[]
     for station in stations:
