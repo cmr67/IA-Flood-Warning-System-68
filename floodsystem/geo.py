@@ -26,23 +26,22 @@ def stations_within_radius(stations, centre, r):
         if distance_from_centre <= r: # If the distance is less than or equal to the specified radius, insclude it in the list
             listradius.append(station)
     return listradius
+
 #Task 1D
 def rivers_with_station(stations):
     river=[]
     for station in stations:
-        if station.river in river:
-            pass
-        else:
-            river.append(station.river)
+        river.append(station.river)
     return sorted_by_key(river)
 def stations_by_river(stations):
     station_riv = {}
     for station in stations:
-        if station.river in station_riv.keys()
-        station_riv[station.river].append(station.name)
-    else:
-        station_riv[station.river] = [station.name]
-    return station_riv    
+        if station.river in station_riv.keys():
+            station_riv[station.river].append(station.name)
+        else:
+            station_riv[station.river] = [station.name]
+    return station_riv   
+
 #task 1E
 def rivers_by_stations_number(stations, n):
     riv={}
@@ -51,19 +50,13 @@ def rivers_by_stations_number(stations, n):
             riv.append(station.river)
         else:
             pass
-for key in rivs:        
-    riv_sorted = sorted_by_key([key,riv[key], 1)        
-if n > len(riv_sorted):
-    ind=len(riv_sorted)
-else:
-    for i in range(len(riv_sorted)):
-        if riv_sorted[i] == riv_sorted[n-1]:
-            ind = i
-            break
-return riv_sorted[:ind +1]                                
-            
-        
-
-    
-           
-    
+    for key in riv:        
+        riv_sorted = sorted_by_key([key],riv[key], 1)        
+        if n > len(riv_sorted):
+            ind=len(riv_sorted)
+        else:
+            for i in range(len(riv_sorted)):
+                if riv_sorted[i] == riv_sorted[n-1]:
+                    ind = i
+                break
+    return riv_sorted[:ind +1]
