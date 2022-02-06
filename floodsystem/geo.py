@@ -42,6 +42,28 @@ def stations_by_river(stations):
         station_riv[station.river].append(station.name)
     else:
         station_riv[station.river] = [station.name]
+    return station_riv    
+#task 1E
+def rivers_by_stations_number(stations, n):
+    riv={}
+    for station in stations:
+        if station.river in riv.keys():
+            riv.append(station.river)
+        else:
+            pass
+for key in rivs:        
+    riv_sorted = sorted_by_key([key,riv[key], 1)        
+if n > len(riv_sorted):
+    ind=len(riv_sorted)
+else:
+    for i in range(len(riv_sorted)):
+        if riv_sorted[i] == riv_sorted[n-1]:
+            ind = i
+            break
+return riv_sorted[:ind +1]                                
+            
+        
+
     
            
     
