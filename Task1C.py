@@ -14,7 +14,7 @@ def run():
     for station in stations_in_radius: # The stations within the radius
         station_list.append(station.name) # Append the stations name into the list
         
-    station_list.sort # Sort the list
+    station_list.sort() # Sort the list
 
     for station in station_list:
         print(station) # Print the stations within the list
