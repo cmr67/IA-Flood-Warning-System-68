@@ -32,31 +32,30 @@ def rivers_with_station(stations):
     river=[]
     for station in stations:
         river.append(station.river)
-    return sorted_by_key(river)
+        river.sort()
+    return (river)
 def stations_by_river(stations):
     station_riv = {}
-    for station in stations:
-        if station.river in station_riv.keys():
-            station_riv[station.river].append(station.name)
-        else:
-            station_riv[station.river] = [station.name]
+    riv_w_station = rivers_with_station(stations)
+    for river in riv_w_station:
+        deez = []
+        for station in stations:
+            if station.river == river:
+                deez.append(station.name)
+        station_riv[river] = deez
     return station_riv   
 
 #task 1E
 def rivers_by_stations_number(stations, n):
-    riv={}
-    for station in stations:
-        if station.river in riv.keys():
-            riv.append(station.river)
+    riv = stations_by_river(stations)
+    riv_num = []
+    for river in riv:        
+        riv_num.append((river, len(riv[river])))
+    riv_sorted = sorted_by_key(riv_num, 1, reverse=True)
+    river_final = riv_sorted[:n]
+    for river in riv_sorted:
+        if river[1] == river_final[-1][1]:
+            river_final.append(river)
         else:
-            pass
-    for key in riv:        
-        riv_sorted = sorted_by_key([key],riv[key], 1)        
-        if n > len(riv_sorted):
-            ind=len(riv_sorted)
-        else:
-            for i in range(len(riv_sorted)):
-                if riv_sorted[i] == riv_sorted[n-1]:
-                    ind = i
-                break
-    return riv_sorted[:ind +1]
+            break
+    return river_final
