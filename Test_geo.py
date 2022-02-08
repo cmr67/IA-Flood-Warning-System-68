@@ -32,7 +32,7 @@ def test_stations_within_radius(stations, centre, r):
 def test_rivers_with_station():
   stations=build_station_list()
   x= rivers_with_station(stations)
-  assert len(x)==843
+  assert len(x)==2165
   assert x[0]=='Addlestone Bourne'
   assert x[1]=='Adur'
 def test_stations_by_river():
@@ -51,4 +51,3 @@ def test_rivers_by_stations_number(stations, n):
        assert rivers_by_stations_number(stations, n)[i][1] < rivers_by_stations_number(stations, n)[i-1][1]
       else:
         assert rivers_by_stations_number(stations, n)[i] == ('River Thames', 55)
-
