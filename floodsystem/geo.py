@@ -38,11 +38,11 @@ def stations_by_river(stations):
     station_riv = {}
     riv_w_station = rivers_with_station(stations)
     for river in riv_w_station:
-        deez = []
+        lest = []
         for station in stations:
             if station.river == river:
-                deez.append(station.name)
-        station_riv[river] = deez
+                lest.append(station.name)
+        station_riv[river] = lest
     return station_riv   
 
 #task 1E
