@@ -4,7 +4,7 @@ from floodsystem.geo import stations_by_river
 
 def run():
     stations = build_station_list()
-    x=rivers_with_station(stations)
+    x=geo.rivers_with_station(stations)
     x_first10=x[:10]
     print("the rivers thathave monitoring stations are:", x_first10)
     print("the number of stations are:", len(x)) 
