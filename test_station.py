@@ -25,7 +25,4 @@ def test_create_monitoring_station():
     assert s.typical_range == trange
     assert s.river == river
     assert s.town == town
-def test_inconsistent_typical_range_stations():
-    stations = build_station_list()
-    ihatepython = stations.inconsistent_typical_range_stations(stations)  
-    assert len(ihatepython) == 28
+
