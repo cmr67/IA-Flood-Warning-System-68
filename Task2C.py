@@ -10,7 +10,7 @@ def run():
     # before let's update the data:
     update_water_levels(stations)
     # now we print:
-    print(stations_highest_rel_level(stations, 10) 
+    print(stations_highest_rel_level(stations, 10)) 
 
 if __name__ == "__main__":
     print("")

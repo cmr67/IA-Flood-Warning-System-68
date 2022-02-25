@@ -47,7 +47,7 @@ class MonitoringStation:
         else:
             return True
         
-     def relative_water_level(self):
+    def relative_water_level(self):
         latest = self.latest_level
         min = self.typical_range[0]
         max = self.typical_range[1]
