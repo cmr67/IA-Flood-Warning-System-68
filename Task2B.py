@@ -8,13 +8,14 @@ def run():
 
     # Build list of stations and set tolerance
     stations = build_station_list()
-    tol=0.8
+    tolerance=0.8
     
-
+    #update
+    update_water_levels(stations)
+    
     # Print stations with ratio higher than tolerance
-    print(stations_level_over_threshold(stations, tol))
+    print(stations_level_over_threshold(stations, tolerance))
     
-
 if __name__ == "__main__":
     print("")
     print("*** Task 2B: CUED Part IA Flood Warning System ***")
