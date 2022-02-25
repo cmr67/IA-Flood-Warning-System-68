@@ -46,6 +46,16 @@ class MonitoringStation:
             return False # If the low typical value is larger than high typical value return False
         else:
             return True
+        
+     def relative_water_level(self):
+        latest = self.latest_level
+        min = self.typical_range[0]
+        max = self.typical_range[1]
+        if latest != None and self.typical_range_consistent()== True:
+            ratio = (latest - min)/(max-min)
+            return ratio
+        else:
+            return None
     
 def inconsistent_typical_range_stations(stations):
     inconsistent_range = []
