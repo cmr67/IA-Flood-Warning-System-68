@@ -6,11 +6,14 @@ from floodsystem.flood import stations_level_over_threshold
 def run():
     """Requirements for Task 2B"""
 
-    # Build list of stations
+    # Build list of stations and set tolerance
     stations = build_station_list()
+    tol=0.8
+    
 
-    # Print number of stations
-
+    # Print stations with ratio higher than tolerance
+    print(stations_level_over_threshold(stations, tol))
+    
 
 if __name__ == "__main__":
     print("")
