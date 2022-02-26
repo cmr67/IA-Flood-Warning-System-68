@@ -39,7 +39,7 @@ def plot_water_level_with_fit(station, dates, levels, p):
     plt.xlabel('date')
     plt.ylabel('water level (m)')
     plt.xticks(rotation=45);
-    plt.title("Station A")
+    plt.title("Water Level Data and best-fit polynomial for" .format(station))
 
     # Display plot
     plt.tight_layout()  # This makes sure plot does not cut off date labels
