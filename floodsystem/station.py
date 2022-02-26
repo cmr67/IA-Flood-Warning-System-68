@@ -49,9 +49,9 @@ class MonitoringStation:
         
     def relative_water_level(self):
         latest = self.latest_level
-        min = self.typical_range[0]
-        max = self.typical_range[1]
         if latest != None and self.typical_range_consistent()== True:
+            min = self.typical_range[0]
+            max = self.typical_range[1]
             ratio = (latest - min)/(max-min)
             return ratio
         else:
