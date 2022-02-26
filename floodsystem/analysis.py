@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 
 def polyfit(dates, levels, p):
     
-    p = 3 # This is for the number of degrees for the ploynomial later
+#    p = 4 # This is for the number of degrees for the ploynomial later
     x = matplotlib.dates.date2num(dates) # Dates as function of their argument
-    ploy, d0 = polyfit(dates,levels, p) # Polynomial for p degrees
+    poly, d0 = polyfit(dates, levels, p) # Polynomial for p degrees
     d0 = x[0] # The shift of the date (time) axis at the initial/first date
 
     p_coeff = np.polyfit(x - d0, levels, p) # Using shifted x values to find coefficient for best fit
