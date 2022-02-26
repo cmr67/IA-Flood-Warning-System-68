@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 
 def plot_water_levels(station, dates, levels):
-
+    # The high and low typical ranges
     low_levels = station.typical_range[0]
     high_level = station.typical_rnage[1]
 
