@@ -14,10 +14,12 @@ def run():
     
     dt = 2 # Past 2 days
     p = 4 # Polynomial with a degree of 4
-    
+
     for station in highest_relative_levels:
         dates, levels = fetch_measure_levels(station.measure_id, dt) # Fetching the updated water levels for the past 10 days
         plot_water_level_with_fit(dates, levels, p)
+
+        plt.show() # Shows the plot/results
 
 if __name__ == "__main__":
     print("")
