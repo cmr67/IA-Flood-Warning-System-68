@@ -15,10 +15,10 @@ def run():
     dt = 10 # Past 10 days
 
     for station in highest_relative_levels:
-        dates, levels = fetch_measure_levels(station.measure_id, dt)
+        dates, levels = fetch_measure_levels(station.measure_id, dt) # Fetching the updated water levels for the past 10 days
         plot_water_levels(station, dates, levels)
 
-        plt.show()
+        plt.show() # Shows the plot/results
 
 if __name__ == "__main__":
     print("")

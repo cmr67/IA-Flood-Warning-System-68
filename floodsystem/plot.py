@@ -7,7 +7,7 @@ def plot_water_levels(station, dates, levels):
     low_levels = station.typical_range[0]
     high_level = station.typical_rnage[1]
 
-    # Plot
+    # Plotting the current data and the typical high and low ranges
     plt.plot(dates, levels, label = "Current startion data")
     plt.plot(dates, low_levels, label = "Low Typical Water Level")
     plt.plot(dates, high_level, label = "High Typical Water Level")
