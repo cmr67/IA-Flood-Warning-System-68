@@ -9,9 +9,10 @@ import matplotlib.pyplot as plt
 def run():
     # Shell for 2E
     # Updating all of the water levels for the stations
-    station = build_station_list
-    update_water_levels(station)
-    highest_relative_levels = stations_highest_rel_level(station, 5) # 5 stations with highest relative water levels
+    stations = build_station_list()
+    update_water_levels(stations)
+    highest_relative_levels = stations_highest_rel_level(stations, 5) # 5 stations with highest relative water levels
+    
     dt = 10 # Past 10 days
 
     for station in highest_relative_levels:
