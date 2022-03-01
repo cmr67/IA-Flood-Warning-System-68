@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from floodsystem.datafetcher import fetch_measure_levels
 from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.flood import stations_highest_rel_level
+from datetime import datetime, timedelta
 
 def run():
     # Shell for Task 2F
@@ -16,7 +17,7 @@ def run():
     p = 4 # Polynomial with a degree of 4
 
     for station in highest_relative_levels:
-        dates, levels = fetch_measure_levels(station.measure_id, dt) # Fetching the updated water levels for the past 10 days
+        dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt)) # Fetching the updated water levels for the past 10 days
         plot_water_level_with_fit(dates, levels, p)
 
         plt.show() # Shows the plot/results
