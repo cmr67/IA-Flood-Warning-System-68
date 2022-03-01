@@ -2,9 +2,11 @@ import matplotlib
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 from .analysis import polyfit
+from .stationdata import build_station_list
 import numpy as np
 
 def plot_water_levels(station, dates, levels):
+    stations=build_station_list()
     # The high and low typical ranges
     low_levels = station.typical_range[0]
     high_level = station.typical_range[1]
@@ -18,7 +20,8 @@ def plot_water_levels(station, dates, levels):
     plt.xlabel('Date')
     plt.ylabel('Water Level (m)')
     plt.xticks(rotation=45);
-    plt.title("Water Level for" .format(station))
+    for station in stations:
+        plt.title("Water Level for {}" .format(station.name))
 
     # Display plot
     plt.tight_layout()  # This makes sure plot does not cut off date labels
@@ -39,7 +42,7 @@ def plot_water_level_with_fit(station, dates, levels, p):
     plt.xlabel('date')
     plt.ylabel('water level (m)')
     plt.xticks(rotation=45);
-    plt.title("Water Level Data and best-fit polynomial for" .format(station))
+    plt.title("Water Level Data and best-fit polynomial for" .format(station.measure_id))
 
     # Display plot
     plt.tight_layout()  # This makes sure plot does not cut off date labels
