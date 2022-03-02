@@ -45,8 +45,3 @@ def test_plot_water_levles(dates, levels, p):
     for station in stations:
         assert polyfit == type(tuple) 
         # As the the funtion should return a tuple, asserting that it is a tuple 
-
-# Test 2G
-def test_flood_warning(stations):
-    for station in stations:
-        warning = flood_warning
