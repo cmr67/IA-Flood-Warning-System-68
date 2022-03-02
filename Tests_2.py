@@ -25,7 +25,8 @@ def test_for_2C():
     s1.latest_level = 7
     s2.latest_level = 3
     stations_test=[s1,s2]
-    assert len(stations_highest_rel_level(stations_test, length)) == 2
+    length =2
+    assert len(stations_highest_rel_level(stations_test, length)) == length
     assert stations_highest_rel_level(stations_test, length)[0] == ('station 3', 1.0)
     assert stations_highest_rel_level(stations_test, length)[1] == ('station 2', 0.6)
 
