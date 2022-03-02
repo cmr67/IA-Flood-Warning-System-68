@@ -9,7 +9,7 @@ def plot_water_levels(station, dates, levels):
     low_level = station.typical_range[0]
     high_level = station.typical_range[1]
 
-    plt.plot(dates, levels) # Plot for the dates and levels
+    plt.plot(dates, levels, label = "River Level") # Plot for the dates and levels
     # Add axis labels, rotate date labels and add plot title
     plt.plot(dates, [low_level]*len(dates), label = "Typical Low Range")
     plt.plot(dates, [high_level]*len(dates), label = "Typical High Range")
@@ -31,7 +31,7 @@ def plot_water_level_with_fit(station, dates, levels, p):
     low_level = station.typical_range[0]
     high_level = station.typical_range[1]
 
-    plt.plot(dates, poly(x - x[-d0]))
+    plt.plot(dates, poly(x - x[-d0]), label = "Polynomial for River Level")
     plt.plot(dates, [low_level]*len(x), label = "Typical Low Range")
     plt.plot(dates, [high_level]*len(x), label = "Typical High Range")
     plt.legend()

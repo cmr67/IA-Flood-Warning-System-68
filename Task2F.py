@@ -3,6 +3,7 @@ from floodsystem.datafetcher import fetch_measure_levels
 from floodsystem.plot import plot_water_level_with_fit
 import datetime
 from floodsystem.utils import sorted_by_key
+from floodsystem.analysis import polyfit
  
 
 
@@ -42,3 +43,10 @@ def run():
 if __name__ == "__main__":
     print("*** Task 2F: CUED Part IA Flood Warning System ***")
     run()
+
+# Test
+def test_plot_water_levles(dates, levels, p):
+    stations = build_station_list()
+    update_water_levels(stations)
+    for station in stations:
+        assert polyfit == type(tuple)
