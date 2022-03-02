@@ -5,6 +5,7 @@ from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.station import MonitoringStation
 from floodsystem.flood import stations_level_over_threshold
 from floodsystem.flood import stations_highest_rel_level
+from floodsystem.analysis import flood_warning
 
 # Test 2B
 def test_for_2B():
@@ -44,3 +45,8 @@ def test_plot_water_levles(dates, levels, p):
     for station in stations:
         assert polyfit == type(tuple) 
         # As the the funtion should return a tuple, asserting that it is a tuple 
+
+# Test 2G
+def test_flood_warning(stations):
+    for station in stations:
+        warning = flood_warning
