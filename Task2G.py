@@ -3,6 +3,9 @@ from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.station import *
 from floodsystem.analysis import flood_warning
 from floodsystem.flood import stations_highest_rel_level
+from floodsystem.datafetcher import fetch_measure_levels
+import datetime
+
 def run():
 
     stations = build_station_list()

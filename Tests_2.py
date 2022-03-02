@@ -46,3 +46,14 @@ def test_plot_water_levles(dates, levels, p):
     for station in stations:
         assert polyfit == type(tuple) 
         # As the the funtion should return a tuple, asserting that it is a tuple 
+#test 2G
+def test_for_ranking():
+    s1 = MonitoringStation("test-s1-id", "test-m1-id", label= "station 1", coord = (-2.0, 4.0), trange= (0, 5), river= "River X", town= "My Town")
+    s2 = MonitoringStation("test-s2-id", "test-m2-id", label = "station 2", coord = (-2.0, 4.0), trange= (0,5), river= "River Y", town= "My Town")
+    s1.latest_level = 2
+    s2.latest_level = 4
+    tol = 1
+    stations= build_station_list()
+    update_water_levels(stations)
+    risk = flood_warning(stations, tol)
+    assert risk[4][-1]== 'Polesworth'
